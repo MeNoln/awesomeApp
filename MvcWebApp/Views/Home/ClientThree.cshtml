@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MvcWebApp.Models.NoteView>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ClientThree</title>
+</head>
+<body>
+    <div id="response">
+        @foreach (var item in Model)
+        {
+            <p>@item.Id : @item.NoteText, Date: <span>@item.AddedDate</span></p>
+        }
+    </div>
+
+    <script src="~/js/signalr.min.js"></script>
+    <script>
+        let hubUrl = 'http://localhost:5000/chat';
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl(hubUrl)
+            .build();
+
+        setInterval(function () {
+            let response = document.getElementById("response");
+            let date = response.getElementsByTagName('span');
+            let tenMinAgo = new Date(Date.now() - 1000 * 600);
+            
+            let noteDate = new Date();
+            for (var i = 0; i < date.length; i++) {
+                noteDate = new Date(date[i].innerHTML)
+                if (noteDate < tenMinAgo) {
+                    date[i].parentElement.innerHTML = "";
+                }
+            }
+        }, 60000);
+
+        // получение сообщения от сервера
+        hubConnection.on("Send", function (model) {
+            let elem = document.createElement("p");
+            elem.appendChild(document.createTextNode(model.id + ":" + model.noteText + ", Date: " + model.addedDate));
+            document.getElementById("response").appendChild(elem);
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>

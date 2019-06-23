@@ -1,0 +1,37 @@
+networks:
+  dockerapi-dev:
+    driver: bridge
+services:
+  mvcwebapp:
+    build:
+      context: C:\Users\PC\Desktop\testapp\WebSocketApp
+      dockerfile: MvcWebApp/Dockerfile
+    depends_on:
+    - postgres_image
+    environment:
+      CONTAINER_TIMEZONE: Europe/Stockholm
+      SET_CONTAINER_TIMEZONE: "true"
+    image: mvcwebapp
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 5000
+      target: 80
+  postgres_image:
+    container_name: postgredbs
+    environment:
+      POSTGRES_DB: notedb
+      POSTGRES_PASSWORD: user
+      POSTGRES_USER: user
+    image: postgres:latest
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - db_volume:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  db_volume: {}

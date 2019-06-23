@@ -1,0 +1,12 @@
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\bin\Debug\netcoreapp2.2\DataAccessLayer.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.AssemblyInfo.cs
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\bin\Debug\netcoreapp2.2\BisnessLogic.deps.json
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\bin\Debug\netcoreapp2.2\BisnessLogic.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\bin\Debug\netcoreapp2.2\BisnessLogic.pdb
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\bin\Debug\netcoreapp2.2\DataAccessLayer.pdb
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.csproj.CopyComplete
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\BisnessLogic\obj\Debug\netcoreapp2.2\BisnessLogic.pdb

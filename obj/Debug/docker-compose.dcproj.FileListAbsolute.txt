@@ -1,0 +1,11 @@
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\BisnessLogic.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\DataAccessLayer.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\BisnessLogic.pdb
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\DataAccessLayer.pdb
+C:\Users\PC\Desktop\testapp\WebSocketApp\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\PC\Desktop\testapp\WebSocketApp\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\testapp\WebSocketApp\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\MvcWebApp.Views.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\MvcWebApp.Views.pdb
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\MvcWebApp.dll
+C:\Users\PC\Desktop\testapp\WebSocketApp\bin\Debug\MvcWebApp.pdb

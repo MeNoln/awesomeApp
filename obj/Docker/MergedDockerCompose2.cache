@@ -1,0 +1,7 @@
+services:
+  aspnetwebapiproj:
+    build:
+      context: C:\Users\PC\Desktop\testapp\WebSocketApp
+      dockerfile: AspNetWebApiProj/Dockerfile
+    image: aspnetwebapiproj
+version: '3.4'

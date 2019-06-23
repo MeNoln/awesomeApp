@@ -1,0 +1,16 @@
+﻿
+@model  MvcWebApp.Models.NoteView
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ClientOne</title>
+</head>
+<body>
+    <form action='@Url.Action("Create")' method="post">
+        <input type="text" name="noteText" />
+        <input type="submit" value="Send" />
+    </form>
+</body>
+</html>

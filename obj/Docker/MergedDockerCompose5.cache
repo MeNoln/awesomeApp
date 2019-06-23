@@ -1,0 +1,34 @@
+networks:
+  dockerapi-dev:
+    driver: bridge
+services:
+  aspnetwebapiproj:
+    build:
+      context: C:\Users\PC\Desktop\testapp\WebSocketApp
+      dockerfile: AspNetWebApiProj/Dockerfile
+    depends_on:
+    - postgres_image
+    image: aspnetwebapiproj
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 8000
+      target: 80
+  postgres_image:
+    container_name: some_postgres
+    environment:
+      POSTGRES_DB: notedb
+      POSTGRES_PASSWORD: user
+      POSTGRES_USER: user
+    image: postgres:latest
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - db_volume:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  db_volume: {}

@@ -1,0 +1,57 @@
+networks:
+  dockerapi-dev:
+    driver: bridge
+services:
+  mvcwebapp:
+    build:
+      context: C:\Users\PC\Desktop\testapp\WebSocketApp
+      dockerfile: MvcWebApp/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MvcWebApp
+      target: base
+    container_name: cont
+    depends_on:
+    - postgres_image
+    entrypoint: tail -f /dev/null
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: mvcwebapp:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/netcoreapp2.2/MvcWebApp.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 5000
+      target: 80
+    volumes:
+    - C:\Users\PC\Desktop\testapp\WebSocketApp\MvcWebApp:/app:rw
+    - C:\Users\PC\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Users\PC\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\PC\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\PC\.nuget\packages:/root/.nuget/packages:ro
+  postgres_image:
+    container_name: postgredbs
+    environment:
+      POSTGRES_DB: notedb
+      POSTGRES_PASSWORD: user
+      POSTGRES_USER: user
+    image: postgres:latest
+    networks:
+      dockerapi-dev: null
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - db_volume:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  db_volume: {}
